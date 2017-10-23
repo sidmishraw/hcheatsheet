@@ -45,3 +45,13 @@ myLFoldedSum = myFoldl (+) 0 [1..5000000]
 myRFoldedSum = myFoldr (+) 0 [1..5000000]
 -- Testing myFoldl'
 myLRFoldedSum = myFoldl' (+) 0 [1..5000000]
+
+-- define a function to reverse a list using foldl
+myreverse :: [a] -> [a]
+myreverse = myFoldl (flip (:)) [] -- using flip on demand of the linter
+-- myreverse = myFoldl (\acc x -> x : acc) []
+-- alternative using `flip` function
+-- myreverse = myFoldl (flip (:)) []
+
+-- Testing out fmap
+myFMap = fmap (+1) [1,2,3,4]
